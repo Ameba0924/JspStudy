@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+//onblur -> 마우스가 떠나면
+//onkeydown -> 키보드 입력하면 바로 
+//isNaN -> 숫자인지 아닌지 판별 참이면 숫자가 아닌것 거짓이면 숫자인것
+
+function check_input1_onblur(){
+	var theForm = document.frm1;
+	if(isNaN(theForm.input1.value)){
+		alert("숫자가 아닌 값이 있습니다.확인해주세요");
+		theForm.input1.select();
+	}
+}
+function check_input2.onkeydown(eEvent){
+	if(!(eEvent.keyCode>=48 && eEvent.keyCode<=57)){
+		alert("이것은 숫자가 아닙니다");
+		event.returnValue=false;
+	}
+} //48부터 57까지가 숫자범위 
+  //event.returnValue=false --> 마우스의 기본조작을 실행하게하지않음.
+</script>
+</head>
+<body>
+<Form name = frm1>
+숫자입력 1 :<input type= text name=input1 size=0 onblur=check_input1_onblur()>
+숫자입력 2 :<input type= text name=input2 size=0 onkeydown=check_input2_onkeydown(event)>
+</Form>
+
+</body>
+</html>

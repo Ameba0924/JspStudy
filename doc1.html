@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h2> DOM ATTRIBUTE PAGE!</h2>
+<script>
+
+	var myDoc = document;
+	var myEle = myDoc.documentElement;
+	alert('이페이지의 Root Element는 : '+ myEle.nodeName);
+	
+	var myEle2 = myEle.getElementsByTagName('head')[0]
+	//여러개일수 있으니 첨자[0] 으로 찾는다
+	
+	if(myEle2 != null)
+		alert("Head Element의 이름은 :" + myEle2.nodeName);
+	
+	var myEle3 = myEle.getElementsByTagName('title')[0];
+	if(myEle3 != null){
+		alert(myEle3.nodeName);
+	}
+
+</script>
+</body>
+</html>

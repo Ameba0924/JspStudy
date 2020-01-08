@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script>
+
+var value = prompt("0 부터 10까지의 숫자를 입력하세요~","");
+
+try{
+	
+	if(value > 10)
+		throw "myError1";
+	else if(value < 10)
+		throw "myError2";
+}catch(e){
+	
+	if(e=="myError1") alert("너무 큰 숫자를 입력했어요")
+	if(e=="myError2") alert("너무 작은숫자를 입력했어요")	
+}
+
+
+</script>
+<body>
+
+</body>
+</html>

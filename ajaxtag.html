@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script>
+
+var httpReq = null;
+
+function getInstance(){
+	var httpReq = null;
+	try{
+		
+		httpReq = new ActiveXObject("Msxml2.XMLHTTP");
+		//객체 생성하기
+		}catch(e){
+			try{
+				
+				httpReq = new ActiveXObject("Microsoft.XMLHTTP");
+			}catch(e2){
+				httpReq=null;
+			}
+		}
+		return httpReq;
+}
+
+function sendData(){
+
+	httpReq = getInstance();
+	httpReq.open("POST","dom2.xml",true); // true = 비동기
+	//post방식으로 text를 받는방식이라 이런방법을 사용함 이방법시 true 가 비동기방식이다 
+	httpReq.onreadystatechange = handleStateChange;
+	//문서에 변화가 일어날때마다 하는작업 = 이후는 함수()
+	httpReq.send();
+}
+
+function handleStateChange()
+{
+	
+	if(httpReq.readyState == 4){ //4는 데이터 전부를 받은상태이다.
+		var xmlData = httpReq.responseXML; // XML파일을 저장
+		var WriteStr = "";
+		
+		var itemList = xmlData.getElementsByTagName("itemlist")[0]; // itemList
+		var item = itemList.childNodes[0];
+		
+		for(i =0; i<itemList.childNodes.length; i++)
+			{
+			item = itemList.childNodes[i];
+			WriteStr += item.getElementsByTagName("name")[0].childNodes[0].nodeValue + " | ";
+			}
+		document.getElementById("myDiv").innerHTML= WriteStr;
+	}
+	}
+</script>
+<body>
+<form name = "myForm" method="post">
+<input type = "button" name ="myname" Onclick="sendData()" value="XmlHttpRequest">
+</form>
+<div id = "myDiv"></div>
+</body>
+</html>

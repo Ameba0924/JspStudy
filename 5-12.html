@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+function myMsg(){
+	
+	try{
+		addlert("어서오세요"); //alert 의 스펠링을 틀림 
+	}catch(e){
+		str = "에러가 발생했습니다 \n\n";
+		str += "Error description: " + e.discription + "\n";
+		str += "계속하시려면 OK 버튼을 눌러주셈 \n\n";
+		alert(str);
+	}
+	
+	
+}
+
+//e.discription --> 에러 메세지 확인 
+</script>
+</head>
+<body>
+<input type = "button" value ="메세지 보기" onclick="myMsg()">
+
+</body>
+</html>

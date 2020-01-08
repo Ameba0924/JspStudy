@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+function OverFunction(){
+	
+	document.image1.src = "aa.jpg";
+	
+	
+}
+
+function OutFunction(){
+	
+	document.image1.src = "bb.jpg";
+
+}
+
+//onmouseover = 마우스를 영역에 가져다가 대면 
+//onmouseout = 마우스가 영역에 없으면 
+
+</script>
+</head>
+
+<body>
+<a href = "http://www.naver.com" target="_blank"
+ 	onmouseover ="OverFunction()" onmouseout ="OutFunction()">
+<img border=0 src="aa.jpg" name="image1">
+</a>
+</body>
+</html>

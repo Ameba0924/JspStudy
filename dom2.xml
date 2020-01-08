@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemlist>
+   <item>
+        <id>AjaxID</id>
+ 	    <name>James</name>
+   </item>
+   <item>
+        <id>SecondAjaxID</id>
+	    <name>Smith</name>
+   </item>
+</itemlist>

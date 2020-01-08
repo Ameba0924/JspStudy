@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+function msg(){
+	
+	try{
+		addlert("어서오세요");
+	}catch(e){
+		str = "이페이지에서 에러가 발생했습니다.\n\n";
+		str += "에러 내용 :" + e.discription +"\n\n";
+		str += "확인을 누르시면 네이버로가겠습니다.\n";
+		str += "취소를 누를경우 학교 홈페이지로 넘어갑니다.\n"
+	
+		if(!confirm(str)){
+			//취소를 누르면 confirm 은 확인이TRUE경우 FALSE가 취소일경우를 나타냄
+			document.location.href = "http://www.dongyang.ac.kr";
+			//document.location.href --> html 에서 a태그를 담당
+			
+		}else document.location.href = "http://www.naver.com";
+		
+	}
+	
+}
+
+</script>
+</head>
+<body>
+<input type = "button" value ="메세지보기" onclick="msg()">
+
+</body>
+</html>

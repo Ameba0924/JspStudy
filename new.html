@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+function fun()
+{
+	
+	var myfa = document.getElementById("myfa");
+	var msg;
+	
+		alert("\n 노드명" + myfa.nodeName);
+		alert("\n 노드타입" + myfa.nodeType);
+		//1.element , 2.attribute , 3.text
+		alert("\n 노드값"+myfa.firstChild.nodeValue); //apple
+		
+		var childs = myfa.childNodes; // apple 빠짐 자식태그만 가져오세묘
+		for ( var i=0; i<childs.length-1; i++){
+			if(childs[i].nodeType == 1) //nodeType이 태그냐?
+					alert(childs[i].nodeName + "노드값 : " + childs[i].innerHTML);
+			
+		}
+	
+	}
+
+</script>
+</head>
+<body onload = "fun()">
+<center id = "myfa">
+apple
+<p>java</p>
+<p>script</p>
+<p>dom</p>
+</center>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//onblur는 이벤트핸들러 
+function onChangeUpperCase(){
+	var myID = document.aa.myName.value; //document는 body를 가르킴,aa폼태그 찾음,폼태그 안으로 들어와 myname텍스트박스안에 있는 값을 myid에 넣음
+	document.aa.myName.value = myID.toUpperCase();//소문자를 대문자로 바꾸는 것
+}
+</script>
+</body>
+<form name = "aa">
+Enter your name;
+<input type="text" name ="myName" onChange = "onChangeUpperCase()">
+
+</form>
+</html>

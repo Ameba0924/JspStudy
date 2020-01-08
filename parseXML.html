@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script>
+
+function parseXML()
+{
+	try{
+		xmlDoc = new ActiveXObject("Microsoft.XMLDOM"); // 객체생성
+		}catch(e){
+			try{
+				xmlDoc = new ActiveXObject.implementation.createDocument("","",null);
+			}catch(e){
+				alert(e.massege);
+				return;
+			}
+		}
+	
+		xmlDoc.async = false; //비동기화
+		xmlDoc.load("myXML.xml");
+		document.getElementById("to").innerHTML =
+			xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+		document.getElementById("from").innerHTML = 
+			xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+		document.getElementById("message").innerHTML = 
+			xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+	}
+
+</script>
+<body onload = "parseXML()">
+<h1>대국민 메세지</h1>
+<p>
+<b>To : </b><span id ="to"></span> <br/>
+<b>From : </b><span id="from"></span> <br/>
+<b>message : </b><span id="message"></span>
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<script>
+function insertRow()
+{
+	oRow = document.createElement('tr');
+	oCell = document.createElement('td');
+	
+	oRow.appendChild(oCell);
+	firstContent = prompt("입력해주세요","");
+	
+	oCell.innerHTML = firstContent;
+	oCell2 = document.createElement('td');
+	oRow.appendChild(oCell2);
+	SecondContent = prompt("입력해주세요","");
+	oCell2.innerHTML = SecondContent;
+	document.getElementById("tbl").children[0].appendChild(oRow);
+	}
+	
+	function deleteRow(){
+		
+		tbl = document.getElementById("tbl");
+		tbl.deleteRow(2);
+		//deleteRow(-1) 맨마지막행 0이면 첫번째행 ~1,2,3,4,5쭉감 
+		
+	}
+
+
+</script>
+<body>
+<! 추가 삭제 되는 테이블 -->
+<table id= "tbl" border = 1 >
+<tr>
+<td>안녕하세요</td>
+<td>현호에오</td>
+</table>
+
+<br><br>
+<table border=1>
+<tr>
+<td align="right"><a href='#' onClick="insertRow()">추가</a></td>
+<td align="right"><a htef='#' onClick="deleteRow()">삭제</a></td>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<script>
+function numberCheckNoNumber(eEvent){
+	var num;
+	var char;
+	var numCheck;
+		
+	if(window.event) //브라우저 전체에 생긴 이벤트가 있니?
+	{
+		num = eEvent.keyCode;	//넘어온 키코드 값 num에 넣어조라
+	}
+	char = String.fromCharCode(num);
+	numCheck = /\d/;  //정규식 리터럴표현 --> test()정규표현식메서드사용.
+	return numCheck.test(char); //numCheck에 test 함수를 사용한거야 char이 수치면 T 아니면 F	
+}
+</script>
+<form>
+키보드를 입력해보세요 ! <br>
+<input type = "text" onkeydown = "return numberCheckNoNumber(event)">
+<!-- event = 모든 키값이다 들어오는 모든 값 -->
+</form>

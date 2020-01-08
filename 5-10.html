@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+function choiceRange(){
+	
+	var eEvent = window.event;
+	if(eEvent.srcElement){
+		choice = eEvent.srcElement;
+		//eEvent.srcElemet 태그를포험해서 모든값을 다 가져옴
+	}
+	
+	var tname;
+	tname = choice.tagName; //가져온 모든값중에 태그이름만 쏙 뽑아옴
+	alert("마우스를 눌렀네요?" + tname +" 의 영역을 클릭했음");
+
+}
+
+</script>
+</head>
+<body onmousedown= "choiceRange()">
+<h2> H2 영역입니다~</h2>
+<P> Paragraph 영역입니다 </P>
+<img border =0 src = "aa.jpg" alt = "myball">
+</body>
+</html>

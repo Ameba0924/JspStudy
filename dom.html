@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function inst(){
+	
+	var div = document.getElementById("target");
+	var txt = prompt("새문단에 추가할 텍스트를 입력하세요.");
+	var oldpara = div.getElementsByTagName("p")[0];
+	
+	var txtNode = document.createTextNode(txt);
+	var para = document.createElement("h1");
+	
+	para.appendChild(txtNode);
+	div.insertBefore(para,oldpara); //전에 삽입 (h1태그 안에 txt내용을삽입)
+}
+
+function dele(){
+	
+	alert("제거할 문단을 클릭하세요.");
+	var paras = document.getElementsByTagName("p");
+	for(var i=0; i<paras.length; i++){
+		
+		paras[i].onclick=ddel;
+	}
+}
+
+function ddel(){
+	var parent = this.parentNode;
+	alert("부모노드는 : " +parent.nodeName + "내용은: " + this.firstChild.nodeValue)
+	parent.removeChild(this);
+}
+
+
+</script>
+</body>
+<div id="target">
+<p>aaaa</p>
+<p>bbbb</p>
+<p>cccc</p>
+<p>dddd</p>
+
+</div>
+<input type = "button" value ="추가하기" onclick="inst()">
+<input type = "button" value ="추가하기" onclick="dele()">
+</html>
